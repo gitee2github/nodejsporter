@@ -1,37 +1,42 @@
 # nodejsporter
 
-#### 介绍
-A rpm packager bot for nodejs modules from npmjs.com
+#### Description
+A rpm packager bot for  nodejsmodules from npmjs.org
+It is a tool to create spec file and create rpm for nodejs modules.
 
-#### 软件架构
-软件架构说明
+#### Installation
 
+1.   python3 setup.py install
 
-#### 安装教程
+#### Preparation
+yum install below software before using this tool
+1.  gcc
+2.  gdb
+3.  libstdc++-devel
+4.  python3-cffi
+5.  nodejs
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+rpm -ivh nodejs-packaging-23-1.noarch.rpm of this url:
+https://gitee.com/chendong1995/nodejs-packaging?_from=gitee_search
 
-#### 使用说明
+#### Instructions
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+nodejsporter is a tool to create spec file and create rpm for  nodejsmodules
+For more details, please use nodejsporter -h
 
-#### 参与贡献
+nodejsporter <package> -s -b -d -o  nodejs-<package>.spec
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+#### Contribution
 
+1.  Fork the repository
+2.  Create Feat_xxx branch
+3.  Commit your code
+4.  Create Pull Request
 
-#### 码云特技
+#### How to create a rpm file
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1.  Create spec file, nodejsporter -s module_name
+2.  Get required  nodejsmodules, nodejsporter -R module_name
+3.  Build and Install rpm package, nodejsporter -B module_name
+4.  specify version , nodejsporter -B module_name 1.0.0
+5.  For more detail, nodejsporter -h
